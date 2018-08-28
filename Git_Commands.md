@@ -34,4 +34,8 @@ origin	https://github.com/withbeth/configs.git (push)
 :git merge origin/master     # If you want to accept the remote changes:
 :git show-branch *master
 :git log origin/master
+
+# Finding diff between current and last verion
+:git show
+:git diff commit_id HEAD
 ```
