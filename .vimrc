@@ -19,6 +19,9 @@ Plugin 'tpope/vim-fugitive' "required
 
 " Add all your plugins here
 
+" Vim to go!
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " More syntax highlighting
 Plugin 'scrooloose/syntastic'
 " Indent line
