@@ -5,6 +5,6 @@
 - http://tweeeety.hateblo.jp/entry/2016/12/12/015607
 - https://qiita.com/annyamonnya/items/17bf05fbf3d9b71d638b
 
-[] plugin for grammer support xml, velocity
-
-[] ZSH
+[x] ZSH
+[] .vimrc
+[] .zshrc
