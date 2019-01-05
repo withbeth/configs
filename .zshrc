@@ -7,16 +7,22 @@ export ZSH="/Users/withbeth/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# "agnoster"
+# prev: "agnoster"
 # powerlevel9k/powerlevel9k"
-ZSH_THEME="agnoster"
+# "avit
+# "cloud
+# "ys
+ZSH_THEME="ys"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=(
+    "robbyrussell"
+    "agnoster"
+)
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -69,6 +75,7 @@ plugins=(
   zsh-autosuggestions
   golang
   python
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -78,14 +85,9 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export LANG=en_US.UTF-8
+export TERM=xterm-256color
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,6 +103,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# For homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# For FDK(FONT DEV KIT - TO INSTALL SOURCECODEPRO)
+export PATH=/Users/withbeth/bin/FDK/Tools/osx:$PATH
 
-export GOPATH=$HOME/_go
-export PATH=$GOPATH/bin:$PATH
+# For GO
+export GOPATH=$HOME/_go/workspace
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+rmd () {
+    pandoc $1 | lynx -stdin
+}
