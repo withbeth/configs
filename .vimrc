@@ -138,6 +138,7 @@ filetype plugin indent on
     set showmatch
 " disable beeping
     set noerrorbells
+    set visualbell
     set vb t_vb=
 " set colorscheme
     set background=dark

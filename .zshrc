@@ -109,6 +109,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # For FDK(FONT DEV KIT - TO INSTALL SOURCECODEPRO)
 export PATH=/Users/withbeth/bin/FDK/Tools/osx:$PATH
 
+# For Gradle
+export GRADLE_HOME=/usr/local/opt/gradle/libexec
+export PATH=$GRADLE_HOME/bin:$PATH
+
 # For GO
 export GOPATH=$HOME/_go/workspace
 export GOROOT="$(brew --prefix golang)/libexec"
