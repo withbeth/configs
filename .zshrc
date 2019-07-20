@@ -12,7 +12,8 @@ export ZSH="/Users/withbeth/.oh-my-zsh"
 # "avit
 # "cloud
 # "ys
-ZSH_THEME="ys"
+# "sobole
+ZSH_THEME="sobole"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -76,6 +77,7 @@ plugins=(
   golang
   python
   vi-mode
+  textmate
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,7 +109,16 @@ export EDITOR='vim'
 # For homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # For FDK(FONT DEV KIT - TO INSTALL SOURCECODEPRO)
-export PATH=/Users/withbeth/bin/FDK/Tools/osx:$PATH
+export PATH=$HOME/bin/FDK/Tools/osx:$PATH
+
+# For my exectuable tools
+export PATH=$HOME/bin:$PATH
+
+# For GITHUB OAuth2 clientId and secret
+export GH_CLIENT_ID=ad24abb8a0235eb99bdc
+export GH_SECRET_ID=13c4e61471777999fdbcd29ecfad4b16d2967aff
+# This can be used to access the GitHub API via using scripts(not web-app)
+export GH_PERSONAL_ACCESS_TOKEN=78be6238d9d30dec723eea2945fc98f814a4c156
 
 # For Gradle
 export GRADLE_HOME=/usr/local/opt/gradle/libexec
@@ -125,3 +136,10 @@ fi
 rmd () {
     pandoc $1 | lynx -stdin
 }
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/withbeth/.sdkman"
+[[ -s "/Users/withbeth/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/withbeth/.sdkman/bin/sdkman-init.sh"
+
+# Displayng Timestamp to the right
+RPROMPT="[%D|%*]"
